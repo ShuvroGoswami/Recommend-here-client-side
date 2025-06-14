@@ -142,17 +142,22 @@ const ProductCard = ({ product, Products, setProduct }) => {
             <p className="text-gray-500 mb-2 italic">Reason: {Reason}</p>
             <p className="text-sm text-gray-400">Brand: {brand}</p>
           </div>
-          <div className="mt-4">
+          <div className="flex ">
             <button
               onClick={() => handleDelete(_id)}
               className="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-600 transition-colors mr-5"
             >
               Delete
             </button>
-            <Link to={`/ProductDetails/${_id}`}>
+            <Link className='mr-5' to={`/ProductDetails/${_id}`}>
                 <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
                     View Details
                 </button>
+            </Link>
+            <Link to={`/updateProduct/${_id}`}>
+            <button className="px-4 py-2 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600 mr-5">
+              Update
+            </button>
             </Link>
           </div>
         </div>
