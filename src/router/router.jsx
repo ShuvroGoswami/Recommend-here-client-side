@@ -3,6 +3,11 @@ import {
 } from "react-router";
 import Homelayout from "../layout/Homelayout";
 import Home from "../pages/Home";
+import Register from "../pages/Register";
+import Login from "../pages/Login";
+import AddProducts from "../pages/AddProducts";
+import Queries from "../pages/Queries";
+import ProductDetails from "../pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +18,30 @@ const router = createBrowserRouter([
         {
             index: true,
             path: '/',
+            loader:()=> fetch('http://localhost:3000/product'),
             Component: Home,
+        },
+        {
+          path: '/addproduct',
+          Component: AddProducts
+        },
+        {
+          path: '/Queries',
+          loader:()=> fetch('http://localhost:3000/product'),
+          Component: Queries
+        },
+        {
+          path: '/ProductDetails/:id',
+          loader:({params})=>fetch(`http://localhost:3000/product/${params.id}`),
+          Component: ProductDetails
+        },
+        {
+          path: '/register',
+          Component: Register
+        },
+        {
+          path: '/login',
+          Component: Login
         },
     ]
   },
