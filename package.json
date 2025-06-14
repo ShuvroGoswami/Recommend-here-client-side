@@ -10,11 +10,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@lottiefiles/react-lottie-player": "^3.6.0",
     "@tailwindcss/vite": "^4.1.10",
+    "firebase": "^11.9.1",
+    "lottie-react": "^2.4.1",
     "react": "^19.1.0",
+    "react-awesome-reveal": "^4.3.1",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "react-router": "^7.6.2",
-    "tailwindcss": "^4.1.10"
+    "react-simple-typewriter": "^5.0.1",
+    "sweetalert2": "^11.22.0",
+    "tailwindcss": "^4.1.10",
+    "typewriter-effect": "^2.22.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
@@ -27,5 +35,10 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
     "vite": "^6.3.5"
-  }
+  },
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

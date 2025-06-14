@@ -1,21 +1,14 @@
 import React from 'react';
-import Header from '../component/Header';
+import Header from '../Component/Header';
 import { Outlet } from 'react-router';
-import Footer from '../component/Footer';
+import Footer from '../Component/Footer';
 
 const Homelayout = () => {
     return (
         <div>
-            <header>
                 <Header></Header>
-            </header>
-
-            <Outlet></Outlet>
-            
-            <footer>
+                <Outlet></Outlet>
                 <Footer></Footer>
-            </footer>
-            
         </div>
     );
 };
