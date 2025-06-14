@@ -11,7 +11,7 @@ const Home = () => {
             <HeroSlider></HeroSlider>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10'>
                 {
-                    products.map(product => <AllProductCard key={product._id} product={product}></AllProductCard>)
+                    products.slice(0, 6).map(product => <AllProductCard key={product._id} product={product}></AllProductCard>)
                 }
             </div>
         </div>
