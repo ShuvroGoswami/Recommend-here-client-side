@@ -11,6 +11,7 @@ import ProductDetails from "../pages/ProductDetails";
 import MyProduct from "../pages/MyProduct";
 import UpdateProduct from "../pages/UpdateProduct";
 import Recommend from "../pages/Recommend";
+import Myrecommends from "../pages/Myrecommends";
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
         {
           path: 'recommend/:id',
           Component: Recommend
+        },
+        {
+          path: 'myRecommend',
+          Component: Myrecommends,
         },
         {
           path: '/register',
