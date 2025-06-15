@@ -10,6 +10,7 @@ import Queries from "../pages/Queries";
 import ProductDetails from "../pages/ProductDetails";
 import MyProduct from "../pages/MyProduct";
 import UpdateProduct from "../pages/UpdateProduct";
+import Recommend from "../pages/Recommend";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
           path: 'updateProduct/:id',
           loader: ({params}) => fetch(`http://localhost:3000/product/${params.id}`),
           Component: UpdateProduct
+        },
+        {
+          path: 'recommend/:id',
+          Component: Recommend
         },
         {
           path: '/register',

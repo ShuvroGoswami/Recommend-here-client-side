@@ -12,6 +12,7 @@
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@tailwindcss/vite": "^4.1.10",
+    "axios": "^1.10.0",
     "firebase": "^11.9.1",
     "lottie-react": "^2.4.1",
     "react": "^19.1.0",
