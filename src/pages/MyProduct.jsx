@@ -26,9 +26,9 @@ const MyProduct = () => {
       {/* <Helmet>
         <title>My-recipe</title>
       </Helmet> */}
-      <h2 className="text-xl font-bold mb-4">My products</h2>
+      <h2 className="text-xl font-bold mb-4">My Query</h2>
       {products.length === 0 ? (
-        <p>You haven't added any product yet. <Link to='/MyProduct' className="text-blue-600">Add Product</Link></p>
+        <p>You haven't added any query yet. <Link to='/addproduct' className="text-blue-600">Add Query</Link></p>
       ) : (
         products.map(product => (
           <ProductCard 
@@ -39,7 +39,9 @@ const MyProduct = () => {
           />
         ))
       )}
+      <Link  to='/addproduct' className=" btn btn-secondary mr-20">Add Query</Link>
     </div>
+    
         </div>
     );
 };

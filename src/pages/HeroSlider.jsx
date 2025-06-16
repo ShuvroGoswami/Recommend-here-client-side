@@ -126,7 +126,7 @@ const HeroSlider = () => {
                     href="/addproduct"
                     className="px-6 py-3 bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700 transition"
                   >
-                    Add a Queries
+                    Add Queries
                   </a>
                 </div>
               </div>

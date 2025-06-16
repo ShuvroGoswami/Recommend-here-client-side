@@ -1,12 +1,18 @@
 
-
-
-
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router';
 
 const AllProductCard = ({ product }) => {
-    const { _id, name, Image, brand, title, Reason, email } = product;
+    const { _id, name, Image, brand, title, Reason } = product;
+    const [recommendCount, setRecommendCount] = useState(0);
+
+    useEffect(() => {
+        // Fetch recommend count for this product
+        fetch(`http://localhost:3000/recommends/count/${_id}`)
+            .then(res => res.json())
+            .then(data => setRecommendCount(data.count || 0))
+            .catch(err => console.error("Error fetching recommend count:", err));
+    }, [_id]);
 
     return (
         <div className="group perspective bg-gradient-to-tr from-indigo-100 via-purple-100">
@@ -14,7 +20,12 @@ const AllProductCard = ({ product }) => {
                 
                 {/* Floating Brand Label */}
                 <div className="absolute top-3 left-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-xs px-3 py-1 rounded-full shadow">
-                    {brand}
+                   Brand: {brand}
+                </div>
+
+                {/* Recommend Badge */}
+                <div className="absolute top-3 right-3 bg-white border text-indigo-600 text-xs px-3 py-1 rounded-full shadow-sm">
+                    {recommendCount} recommends
                 </div>
 
                 {/* Product Image */}
@@ -27,9 +38,11 @@ const AllProductCard = ({ product }) => {
                 </div>
 
                 {/* Product Info */}
-                <h2 className="text-lg font-bold text-gray-800 truncate">{title}</h2>
-                <p className="text-sm text-gray-700 mb-1">By <span className="font-semibold">{name}</span></p>
-                <p className="text-sm text-gray-500 mb-3">{Reason?.slice(0, 60) || 'No reason provided.'}...</p>
+                <h2 className="text-lg font-bold text-gray-800 truncate">Product:{name}</h2>
+                <p className="text-sm text-gray-700 mb-1">Title: <span className="font-semibold">{title}</span></p>
+                <p className="text-sm text-gray-500 mb-3">
+                    {Reason?.slice(0, 60) || 'No reason provided.'}...
+                </p>
 
                 {/* CTA Button */}
                 <Link to={`/ProductDetails/${_id}`}>
@@ -43,3 +56,4 @@ const AllProductCard = ({ product }) => {
 };
 
 export default AllProductCard;
+

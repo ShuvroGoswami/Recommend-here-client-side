@@ -16,15 +16,23 @@ const Header = () => {
 
   const link =<>
   <NavLink to="/"  className='mr-3 '>Home</NavLink>
-  <NavLink to="/addproduct"  className='mr-3 '>AddProduct</NavLink>
   <NavLink to="/Queries"  className='mr-3 '>Queries</NavLink>
-  <NavLink to="/MyProduct"  className='mr-3 '>My-product</NavLink>
-  <NavLink to="/myRecommend"  className='mr-3 '>My-recommend</NavLink>
+  <NavLink to="/allRecommends"  className='mr-3 '>AllRecommends</NavLink>
+  
+  {
+    user && <>
+      <NavLink to="/addproduct"  className='mr-3 '>AddQueries</NavLink>
+  <NavLink to="/MyProduct"  className='mr-3 '>My-Queries</NavLink>
+  <NavLink to="/myRecommend"  className='mr-3 '>My-Recommendation</NavLink>
+  <NavLink to="/RecommendsForMe"  className='mr-3 '>RecommendsForMe</NavLink>
+     </>
+  }
+  
   </>
   
   return (
     <div>
-      <div className="navbar bg-gradient-to-r from-indigo-50 to-purple-100 text-black shadow-sm">
+      <div className="navbar bg-gradient-to-r from-indigo-50 to-purple-100 text-black shadow-sm mb-7">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,11 +41,10 @@ const Header = () => {
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        {link}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <img className='w-15' src={'https://static.vecteezy.com/system/resources/previews/026/711/273/non_2x/recommended-stamp-recommendation-icon-recommendation-rubber-stamp-round-band-label-emblem-seal-sticker-logo-illustration-with-grunge-texture-vector.jpg'} alt="" />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
