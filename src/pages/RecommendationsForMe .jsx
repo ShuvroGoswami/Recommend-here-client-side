@@ -71,7 +71,13 @@ const RecommendationsForMe = () => {
     if (!user?.email) return;
 
     axios
-      .get(`http://localhost:3000/recommends-for-user?email=${user.email}`)
+      .get(`http://localhost:3000/recommends-for-user?email=${user.email}`
+        ,{
+        headers: {
+          authorization : `Bearer ${user.accessToken}`
+        }
+      }
+    )
       .then((res) => {
         setRecommends(res.data);
         setLoading(false);

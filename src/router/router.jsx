@@ -14,11 +14,14 @@ import Recommend from "../pages/Recommend";
 import Myrecommends from "../pages/Myrecommends";
 import AllRecommends from "../pages/AllRecommends";
 import RecommendationsForMe from "../pages/RecommendationsForMe ";
+import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: Homelayout,
+    errorElement: <ErrorPage></ErrorPage>,
     
     children: [
         {
@@ -29,7 +32,10 @@ const router = createBrowserRouter([
         },
         {
           path: '/addproduct',
-          Component: AddProducts
+          // Component: AddProducts
+          element:<PrivateRoute>
+            <AddProducts></AddProducts>
+          </PrivateRoute>
         },
         {
           path: '/Queries',
@@ -43,8 +49,11 @@ const router = createBrowserRouter([
         },
         {
           path: '/MyProduct',
-          loader:()=> fetch('http://localhost:3000/product'),
-          Component: MyProduct
+          loader:()=> fetch('http://localhost:3000/products/user'),
+          // Component: MyProduct
+          element: <PrivateRoute>
+            <MyProduct></MyProduct>
+          </PrivateRoute>
         },
         {
           path: 'updateProduct/:id',
@@ -61,11 +70,17 @@ const router = createBrowserRouter([
         },
         {
           path: 'RecommendsForMe',
-          Component: RecommendationsForMe
+          // Component: RecommendationsForMe
+          element: <PrivateRoute>
+            <RecommendationsForMe></RecommendationsForMe>
+          </PrivateRoute>
         },
         {
           path: 'myRecommend',
-          Component: Myrecommends,
+          // Component: Myrecommends,
+          element: <PrivateRoute>
+            <Myrecommends></Myrecommends>
+          </PrivateRoute>
         },
         {
           path: '/register',

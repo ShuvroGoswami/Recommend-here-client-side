@@ -65,7 +65,13 @@ const RecommendList = ({ myRecommendsPromise }) => {
 
     useEffect(() => {
         if (!loading && user?.email) {
-            fetch(`http://localhost:3000/recommends?email=${user.email}`)
+            fetch(`http://localhost:3000/recommends/by-email?email=${user.email}`
+                ,{
+                headers: {
+                    authorization:`Bearer ${user.accessToken}`
+                }
+            }
+        )
                 .then(res => res.json())
                 .then(data => setProducts(data))
                 .catch(err => console.error("Error fetching user product:", err));

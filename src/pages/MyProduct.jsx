@@ -10,7 +10,13 @@ const MyProduct = () => {
      useEffect(() => {
     if (!loading && user?.email) {
       // Fetch only this user's recipes
-      fetch(`http://localhost:3000/product?email=${user.email}`)
+      fetch(`http://localhost:3000/products/user?email=${user.email}`
+        ,{
+        headers: {
+          authorization : `Bearer ${user.accessToken}`
+        }
+      }
+    )
         .then(res => res.json())
         .then(data => setProduct(data))
         .catch(err => console.error("Error fetching user product:", err));

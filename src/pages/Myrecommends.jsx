@@ -8,7 +8,7 @@ import { myRecommendsPromise } from '../api/recommendsApi';
 const Myrecommends = () => {
 
     const {user} = use(AuthContext);
-    console.log(user?.email);
+    console.log('token--',user.accessToken);
 
 
 
@@ -17,7 +17,7 @@ const Myrecommends = () => {
             
            {user && <Suspense fallback={<span className="loading loading-bars loading-xl"></span>}>
                 <RecommendList
-                myRecommendsPromise={myRecommendsPromise(user?.email)}
+                myRecommendsPromise={myRecommendsPromise(user?.email, user.accessToken)}
                 ></RecommendList>
             </Suspense>}
         </div>

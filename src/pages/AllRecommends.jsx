@@ -6,7 +6,7 @@ const AllRecommends = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/recommends')
+    fetch('http://localhost:3000/recommends',)
       .then(res => res.json())
       .then(data => {
         setRecommends(data);
