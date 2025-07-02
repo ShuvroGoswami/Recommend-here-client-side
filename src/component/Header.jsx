@@ -32,7 +32,7 @@ const Header = () => {
   
   return (
     <div>
-      <div className="navbar bg-gradient-to-r from-indigo-50 to-purple-100 text-black shadow-sm mb-7">
+      <div className="navbar fixed top-0 left-0 w-full z-50   bg-gradient-to-r from-indigo-50 to-purple-100 text-black shadow-sm lg:px-15 ">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -40,7 +40,7 @@ const Header = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 lg:p-2 shadow">
         {link}
       </ul>
     </div>
@@ -57,9 +57,9 @@ const Header = () => {
 
     {
             user ? (<>
-                <button onClick={handleLogout} className='btn ml-3 '>LogOut</button>
-            </>) : (<><Link to='login' className="btn mr-3 ">Login</Link>
-              <Link to="/register" className="btn  ">Register</Link></>)
+                <button onClick={handleLogout} className='btn bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 ml-3 '>LogOut</button>
+            </>) : (<><Link to='login' className="btn bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 mr-3 ">Login</Link>
+              <Link to="/register" className="btn bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 ">Register</Link></>)
           }
   </div>
 </div>

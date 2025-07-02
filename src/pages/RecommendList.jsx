@@ -14,7 +14,7 @@
 //     useEffect(() => {
 //         if (!loading && user?.email) {
 //           // Fetch only this user's recipes
-//           fetch(`http://localhost:3000/recommends?email=${user.email}`)
+//           fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends?email=${user.email}`)
 //             .then(res => res.json())
 //             .then(data => setProduct(data))
 //             .catch(err => console.error("Error fetching user product:", err));
@@ -65,7 +65,7 @@ const RecommendList = ({ myRecommendsPromise }) => {
 
     useEffect(() => {
         if (!loading && user?.email) {
-            fetch(`http://localhost:3000/recommends/by-email?email=${user.email}`
+            fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends/by-email?email=${user.email}`
                 ,{
                 headers: {
                     authorization:`Bearer ${user.accessToken}`

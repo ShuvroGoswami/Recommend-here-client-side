@@ -1,6 +1,6 @@
 
  export const myRecommendsPromise = (email, accessToken) =>{
-    return fetch(`http://localhost:3000/recommends?email=${email}` , {
+    return fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends/by-email?email=${email}` , {
       headers: {
          authorization: `Bearer ${accessToken}`
       }

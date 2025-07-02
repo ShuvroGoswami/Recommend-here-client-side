@@ -72,19 +72,21 @@ import 'swiper/css/pagination';
 const slides = [
   {
     id: 1,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ4TKcuS4tnoJOZFIEgSXaj5EMaVJC30YOuA&s',
+    image: 'https://i.ibb.co/LXwFyd2C/images.jpg',
     title: 'Buy Better. Live Ethically.',
     subtitle: 'Discover and recommend conscious alternatives.',
   },
   {
     id: 2,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSykUhFDLt30fbBfTxIm4h-tCKn8u9T-MKgQ&s',
+    image: 'https://i.ibb.co/VYhv4FCk/download-1.jpg',
+
     title: 'Power to the People',
+  
     subtitle: 'Join the community making informed product choices.',
   },
   {
     id: 3,
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdSHtzfa_7mVGCpt-gclVkvN1tGb3kjrIiRA&s',
+    image: 'https://i.ibb.co/1tR65R2s/download.jpg',
     title: 'Rethink What You Support',
     subtitle: 'Explore, question, and choose wisely.',
   },
@@ -92,7 +94,7 @@ const slides = [
 
 const HeroSlider = () => {
   return (
-    <div className="w-full h-screen">
+    <div className="w-full  h-[400px]">
       <Swiper
         modules={[Autoplay, EffectFade, Pagination]}
         effect="fade"
@@ -104,7 +106,7 @@ const HeroSlider = () => {
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
             <div
-              className="relative w-full h-screen bg-cover bg-center"
+              className="relative w-full h-[400px] bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="absolute inset-0 bg-black/60 flex flex-col justify-center items-center px-6 text-center text-white">
@@ -116,15 +118,9 @@ const HeroSlider = () => {
                 </p>
 
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  {/* <a
-                    href="/#products"
-                    className="px-6 py-3 bg-white text-black font-medium rounded hover:bg-gray-200 transition"
-                  >
-                    Explore Products
-                  </a> */}
                   <a
                     href="/addproduct"
-                    className="px-6 py-3 bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700 transition"
+                    className="px-6 py-3 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-medium rounded hover:bg-indigo-700 transition"
                   >
                     Add Queries
                   </a>

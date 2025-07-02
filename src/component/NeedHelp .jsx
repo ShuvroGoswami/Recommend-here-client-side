@@ -17,7 +17,7 @@ const NeedHelp = () => {
 
         <a
           href=""
-          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded transition"
+          className="inline-flex items-center gap-2 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:bg-indigo-700 text-white font-medium px-6 py-3 rounded transition"
         >
           <FaEnvelope />
           Contact Support

@@ -13,7 +13,7 @@ const AddProducts = () => {
     const NewProject = Object.fromEntries(formData.entries());
     console.log(NewProject);
 
-    fetch('http://localhost:3000/product', {
+    fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/product', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -145,7 +145,7 @@ const AddProducts = () => {
 
           <button
             type="submit"
-            className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg transition"
+            className="w-full py-4 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 hover:bg-indigo-700 text-white font-semibold rounded-lg shadow-lg transition"
           >
             Add Product
           </button>

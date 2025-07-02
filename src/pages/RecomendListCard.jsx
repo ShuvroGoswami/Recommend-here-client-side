@@ -15,7 +15,7 @@ const RecomendListCard = ({ product, products, setProducts }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/recommends/${_id}`, {
+                fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

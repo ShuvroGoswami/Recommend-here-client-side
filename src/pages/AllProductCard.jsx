@@ -8,7 +8,7 @@ const AllProductCard = ({ product }) => {
 
     useEffect(() => {
         // Fetch recommend count for this product
-        fetch(`http://localhost:3000/recommends/count/${_id}`)
+        fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends/count/${_id}`)
             .then(res => res.json())
             .then(data => setRecommendCount(data.count || 0))
             .catch(err => console.error("Error fetching recommend count:", err));

@@ -9,7 +9,7 @@
 //   useEffect(() => {
 //     if (!user?.email) return;
 
-//     fetch(`http://localhost:3000/my-recommendations?email=${user.email}`)
+//     fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/my-recommendations?email=${user.email}`)
 //       .then(res => res.json())
 //       .then(data => {
 //         setRecommends(data);
@@ -71,7 +71,7 @@ const RecommendationsForMe = () => {
     if (!user?.email) return;
 
     axios
-      .get(`http://localhost:3000/recommends-for-user?email=${user.email}`
+      .get(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends-for-user?email=${user.email}`
         ,{
         headers: {
           authorization : `Bearer ${user.accessToken}`
@@ -107,7 +107,7 @@ const RecommendationsForMe = () => {
         </thead>
         <tbody>
           {recommends.map((rec) => (
-            <tr key={rec._id} className="border-b hover:bg-blue-300">
+            <tr key={rec._id} className="border-b hover:bg-purple-500">
               <td className="px-4 py-2 border-r">{rec.QueryTitle || 'N/A'}</td>
               <td className="px-4 py-2 border-r">{rec.productName || 'N/A'}</td>
               <td className="px-4 py-2 border-r">{rec.recommender || 'N/A'}</td>

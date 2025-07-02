@@ -1,56 +1,3 @@
-// import React, { use, useEffect, useState } from 'react';
-// import { Link, useLoaderData } from 'react-router';
-// import { AuthContext } from '../provider/AuthProvider';
-// import { LiaCommentAlt } from "react-icons/lia";
-
-// const ProductDetails = () => {
-//     const { user } = use(AuthContext);
-//     const product = useLoaderData();
-//     const { _id, name, Image, brand, title, Reason, email, userName } = product;
-
-//     const [recommendCount, setRecommendCount] = useState(0);
-
-//     useEffect(() => {
-//         fetch(`http://localhost:3000/recommends/count/${_id}`)
-//             .then(res => res.json())
-//             .then(data => {
-//                 setRecommendCount(data.count);
-//             })
-//             .catch(err => console.error(err));
-//     }, [_id]);
-
-//     return (
-//         <div>
-//             <div style={{ padding: '20px', maxWidth: '600px', margin: '0 auto', border: '1px solid #ddd', borderRadius: '8px' }}>
-                
-//                 {Image && <img src={Image} alt={name} style={{ width: '100%', height: 'auto', borderRadius: '4px' }} />}
-                
-//                 <p><strong>Product name:</strong> {name}</p>
-//                 <p><strong>Brand:</strong> {brand}</p>
-//                 <p><strong>Title:</strong> {title}</p>
-//                 <p><strong>Reason:</strong> {Reason}</p>
-//                 <p><strong>Contact Email:</strong> {userName}</p>
-
-//                 <div className='flex justify-between mx-5'>
-//                     <div >
-//                         <button className='btn btn-primary'>Total Recommends:{recommendCount}</button>
-//                     </div>
-
-//                     <div>
-//                          <Link to={`/recommend/${_id}`}>
-//                     <button className='btn btn-secondary'>Click here for Recommend</button>
-//                 </Link>
-//                     </div>
-//                 </div>
-
-               
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default ProductDetails;
-
 
 import React, { use, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router';
@@ -65,7 +12,7 @@ const ProductDetails = () => {
     const [recommendCount, setRecommendCount] = useState(0);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/recommends/count/${_id}`)
+        fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recommends/count/${_id}`)
             .then(res => res.json())
             .then(data => {
                 setRecommendCount(data.count);
@@ -74,7 +21,7 @@ const ProductDetails = () => {
     }, [_id]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-purple-300 via-pink-200 to-yellow-100 flex items-center justify-center p-6">
+        <div className="min-h-screen bg-gradient-to-r from-white via-blue-100 to-purple-100  flex items-center justify-center p-6">
             <div className="relative bg-white/20 backdrop-blur-lg shadow-xl rounded-2xl overflow-hidden w-full max-w-xl p-6 border border-white/30">
 
                 {/* Image + Floating Badge */}
@@ -107,7 +54,7 @@ const ProductDetails = () => {
                 {/* Floating Action */}
                 <div className="absolute bottom-6 right-6">
                     <Link to={`/recommend/${_id}`}>
-                        <button className="bg-indigo-600 text-white px-5 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition flex items-center gap-2">
+                        <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-full shadow-lg hover:bg-indigo-700 transition flex items-center gap-2">
                             <LiaCommentAlt className="text-xl" />
                             Recommend here
                         </button>

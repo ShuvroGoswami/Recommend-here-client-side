@@ -6,7 +6,7 @@ const AllRecommends = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:3000/recommends',)
+    fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/recommends',)
       .then(res => res.json())
       .then(data => {
         setRecommends(data);

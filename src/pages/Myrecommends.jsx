@@ -8,7 +8,7 @@ import { myRecommendsPromise } from '../api/recommendsApi';
 const Myrecommends = () => {
 
     const {user} = use(AuthContext);
-    console.log('token--',user.accessToken);
+    // console.log('token--',user.accessToken);
 
 
 

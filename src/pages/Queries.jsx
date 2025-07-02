@@ -1,21 +1,4 @@
-// import React from 'react';
-// import AllProductCard from './AllProductCard';
-// import { useLoaderData } from 'react-router';
 
-// const Queries = () => {
-//     const products = useLoaderData();
-//     return (
-//         <div>
-//            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 p-10'>
-//                 {
-//                     products.map(product => <AllProductCard key={product._id} product={product}></AllProductCard>)
-//                 }
-//             </div>
-//         </div>
-//     );
-// };
-
-// export default Queries;
 
 import React, { useEffect, useState } from 'react';
 import AllProductCard from './AllProductCard';
@@ -28,8 +11,8 @@ const Queries = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       const url = query
-        ? `http://localhost:3000/product?search=${encodeURIComponent(query)}`
-        : 'http://localhost:3000/product';
+        ? `https://b11a11-server-side-shuvro-goswami.vercel.app/product?search=${encodeURIComponent(query)}`
+        : 'https://b11a11-server-side-shuvro-goswami.vercel.app/product';
       const res = await fetch(url);
       const data = await res.json();
       setProducts(data);
@@ -54,7 +37,7 @@ const Queries = () => {
           placeholder="Search by product name..."
           className="input input-bordered w-full max-w-md mr-2"
         />
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700">
           Search
         </button>
       </form>

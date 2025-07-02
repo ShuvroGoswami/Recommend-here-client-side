@@ -1,93 +1,3 @@
-// import React from 'react';
-// import Swal from 'sweetalert2';
-
-// const ProductCard = ({product, Products, setProduct}) => {
-
-//     const {
-//     _id,
-//      name,
-//      brand,
-//     title,
-//     Image,
-//     Reason,
-//    } = product
-
-// const handleDelete = (_id) => {
-
-
-//     Swal.fire({
-//       title: "Are you sure?",
-//       text: "You won't be able to revert this!",
-//       icon: "warning",
-//       showCancelButton: true,
-//       confirmButtonColor: "#3085d6",
-//       cancelButtonColor: "#d33",
-//       confirmButtonText: "Yes, delete it!"
-//     }).then((result) => {
-//       if (result.isConfirmed) {
-
-//         // connect to mongo
-//         fetch(`http://localhost:3000/product/${_id}`, {
-//           method: 'DELETE'
-//         })
-//           .then(res => res.json())
-//           .then(data => {
-//             if (data.deletedCount === 1) {
-//               // const remainingRecipes = recipe.filter(recipes => recipe._id !== _id);
-//               // recipe(remainingRecipes)
-
-//               Swal.fire({
-//                 title: "Deleted!",
-//                 text: "Your recipe has been deleted.",
-//                 icon: "success"
-//               });
-
-//               const remainingProducts = Products.filter(rec => rec._id !== _id);
-//               setProduct(remainingProducts)
-//             }
-//           })
-//       }
-//     });
-//   }
-
-//     return (
-//         <div>
-//            <div className=" bg-cyan-900 mb-5">
-//   <div className="hero-content flex-col lg:flex-row justify-between">
-//     <img
-//       src={Image}
-//       className="w-[500px] rounded-lg shadow-2xl"
-//     />
-//     <div className='mr-100'>
-//       <h1 className="text-5xl font-bold">{name} </h1>
-//       <p className="py-6">
-//         {title}
-//       </p>
-//       <p className="py-6">
-//         {Reason}
-//       </p>
-//       <p className="py-6">
-//         {brand}
-//       </p>
-//        <div>
-            
-//         <button
-//               onClick={() => handleDelete(_id)}
-//               className="px-4 py-2 text-sm bg-red-500 text-white rounded hover:bg-red-600"
-//             >
-//               Delete
-//             </button>
-//         </div>
-//     </div>
-//   </div>
-// </div>
-       
-//         </div>
-//     );
-// };
-
-// export default ProductCard;
-
 
 import React from 'react';
 import { Link } from 'react-router';
@@ -107,7 +17,7 @@ const ProductCard = ({ product, Products, setProduct }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:3000/product/${_id}`, {
+        fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/product/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -128,7 +38,7 @@ const ProductCard = ({ product, Products, setProduct }) => {
   };
 
   return (
-    <div className="bg-white shadow-md rounded-lg overflow-hidden mb-6 transition-transform hover:scale-[1.01] border border-gray-200">
+    <div className="bg-gradient-to-r from-white via-blue-50 to-purple-50 shadow-md rounded-lg overflow-hidden mb-6 transition-transform hover:scale-[1.01] border border-gray-200">
       <div className="flex flex-col lg:flex-row">
         <img
           src={Image}
@@ -145,17 +55,17 @@ const ProductCard = ({ product, Products, setProduct }) => {
           <div className="flex ">
             <button
               onClick={() => handleDelete(_id)}
-              className="px-4 py-2 bg-red-500 text-white text-sm font-medium rounded hover:bg-red-600 transition-colors mr-5"
+              className="px-4 py-2 bg-gradient-to-r from-indigo-400 to-purple-400 hover:from-indigo-700 hover:to-purple-700 text-white text-sm font-medium rounded transition-colors mr-5"
             >
               Delete
             </button>
             <Link className='mr-5' to={`/ProductDetails/${_id}`}>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded">
+                <button className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-4 py-2 rounded">
                     View Details
                 </button>
             </Link>
             <Link to={`/updateProduct/${_id}`}>
-            <button className="px-4 py-2 text-sm bg-yellow-500 text-white rounded hover:bg-yellow-600 mr-5">
+            <button className="px-4 py-2 text-sm bg-gradient-to-r from-blue-400 to-purple-400 text-white rounded  mr-5">
               Update
             </button>
             </Link>

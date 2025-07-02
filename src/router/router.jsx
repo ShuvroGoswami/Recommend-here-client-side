@@ -27,7 +27,7 @@ const router = createBrowserRouter([
         {
             index: true,
             path: '/',
-            loader:()=> fetch('http://localhost:3000/product'),
+            loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/product'),
             Component: Home,
         },
         {
@@ -39,17 +39,17 @@ const router = createBrowserRouter([
         },
         {
           path: '/Queries',
-          loader:()=> fetch('http://localhost:3000/product'),
+          loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/product'),
           Component: Queries
         },
         {
           path: '/ProductDetails/:id',
-          loader:({params})=>fetch(`http://localhost:3000/product/${params.id}`),
+          loader:({params})=>fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/product/${params.id}`),
           Component: ProductDetails
         },
         {
           path: '/MyProduct',
-          loader:()=> fetch('http://localhost:3000/products/user'),
+          loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/products/user'),
           // Component: MyProduct
           element: <PrivateRoute>
             <MyProduct></MyProduct>
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
         },
         {
           path: 'updateProduct/:id',
-          loader: ({params}) => fetch(`http://localhost:3000/product/${params.id}`),
+          loader: ({params}) => fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/product/${params.id}`),
           Component: UpdateProduct
         },
         {
@@ -123,12 +123,12 @@ export default router;
 //         {
 //             index: true,
 //             path: '/',
-//             loader:()=> fetch('http://localhost:3000/recipes'),
+//             loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/recipes'),
 //             Component: Home,
 //         },
 //         {
 //             path:'recipesDetails/:id',
-//             loader:({params})=>fetch(`http://localhost:3000/recipes/${params.id}`),
+//             loader:({params})=>fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recipes/${params.id}`),
 //             // Component: RecipeDetails,
 //             element: <PrivateRoute>
 //               <RecipeDetails></RecipeDetails>
@@ -136,7 +136,7 @@ export default router;
 //         },
 //         {
 //           path: '/allrecipe',
-//            loader:()=> fetch('http://localhost:3000/recipes'),
+//            loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/recipes'),
 //           Component: AllRecipe,
 //         },
 //         {
@@ -148,7 +148,7 @@ export default router;
 //         },
 //         {
 //           path: '/myrecipes',
-//           loader:()=> fetch('http://localhost:3000/recipes'),
+//           loader:()=> fetch('https://b11a11-server-side-shuvro-goswami.vercel.app/recipes'),
 //           // Component: MyRecipes
 //           element: <PrivateRoute>
 //             <MyRecipes></MyRecipes>
@@ -156,7 +156,7 @@ export default router;
 //         },
 //         {
 //           path: 'updateRecipe/:id',
-//           loader: ({params}) => fetch(`http://localhost:3000/recipes/${params.id}`),
+//           loader: ({params}) => fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/recipes/${params.id}`),
 //           Component: UpdateRecipe,
 //         },
 //         {

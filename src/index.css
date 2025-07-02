@@ -1,6 +1,6 @@
 a.active{
 text-decoration: underline;
-color:deepskyblue
+color:purple 
 }
 
 :root[data-theme='light'] {

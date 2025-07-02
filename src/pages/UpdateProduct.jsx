@@ -14,7 +14,7 @@
 //         console.log(UpdateProduct);
 
 //         // update recipe send mongodb
-//         fetch(`http://localhost:3000/product/${_id}`, {
+//         fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/product/${_id}`, {
 //             method: 'PUT',
 //             headers: {
 //                 'content-type':'application/json'
@@ -120,7 +120,7 @@ const UpdateProduct = ({ theme = {} }) => {
     const formData = new FormData(form);
     const UpdateProduct = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/product/${_id}`, {
+    fetch(`https://b11a11-server-side-shuvro-goswami.vercel.app/product/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -293,7 +293,7 @@ const UpdateProduct = ({ theme = {} }) => {
             style={{ backgroundColor: primaryColor }}
             onMouseEnter={(e) => (e.target.style.backgroundColor = primaryHover)}
             onMouseLeave={(e) => (e.target.style.backgroundColor = primaryColor)}
-            className="md:col-span-2 w-full py-4 text-white font-semibold rounded-lg shadow-md transition"
+            className="md:col-span-2 w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 py-4 text-white font-semibold rounded-lg shadow-md transition"
           >
             Update Product
           </button>

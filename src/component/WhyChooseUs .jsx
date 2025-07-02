@@ -16,7 +16,7 @@ const WhyChooseUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* 1 */}
           <div className="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition">
-            <FaBalanceScale className="text-indigo-600 text-5xl mb-4 mx-auto" />
+            <FaBalanceScale className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-5xl mb-4 mx-auto" />
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Ethical Awareness</h3>
             <p className="text-gray-600 text-sm">
               Learn why certain products are boycotted and discover better, more responsible alternatives.
@@ -25,7 +25,7 @@ const WhyChooseUs = () => {
 
           {/* 2 */}
           <div className="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition">
-            <FaUsers className="text-indigo-600 text-5xl mb-4 mx-auto" />
+            <FaUsers className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-5xl mb-4 mx-auto" />
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Community Recommendations</h3>
             <p className="text-gray-600 text-sm">
               Real people recommend products they trust. Join the community and help others make smarter decisions.
@@ -34,7 +34,7 @@ const WhyChooseUs = () => {
 
           {/* 3 */}
           <div className="bg-white shadow-md rounded-lg p-8 hover:shadow-xl transition">
-            <FaLightbulb className="text-indigo-600 text-5xl mb-4 mx-auto" />
+            <FaLightbulb className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-5xl mb-4 mx-auto" />
             <h3 className="text-xl font-semibold text-gray-800 mb-2">Informed Decisions</h3>
             <p className="text-gray-600 text-sm">
               You’re not alone in your choices. Use our platform to find transparency, purpose, and quality in what you buy.
